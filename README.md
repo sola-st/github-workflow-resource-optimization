@@ -1,5 +1,9 @@
 # GHA Runs Collector and Analyzer
 
+
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8344576.svg)](https://doi.org/10.5281/zenodo.8344576) [<img src="https://img.shields.io/badge/dockerhub-DyPyBench-blue.svg?logo=Docker">](https://hub.docker.com/r/islemdockerdev/github-workflow-resource-study)
+
 This artifact submission includes the code and data utilized in the empirical study outlined in the paper Resource Usage and Optimization Opportunities in Workflows of GitHub Actions. The study produces two primary outputs:
 
 1. **Dataset:** We collected a dataset comprising 1.3 million runs with 3.7 million jobs.
