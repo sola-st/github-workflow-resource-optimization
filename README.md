@@ -141,7 +141,7 @@ This notebook contains the reproduction of the results of RQ2, mainly summarized
 
 *Important: It takes around 13 minutes to run this notebook on our machine and consumes around 9GB of RAM*
 
-#### 2. Reproducing Results of RQ3
+#### 3. Reproducing Results of RQ3
 This notebook contains the reproduction of the results of RQ1, mainly summarized in Tables 5 and 6 of the PDF.
 
 *Important: It takes around 17 minutes to run this notebook on our machine and consumes around 9GB of RAM*
