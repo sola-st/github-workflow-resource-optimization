@@ -43,8 +43,9 @@ The following sections outline the requirements for importing, installing, and u
 4. **GitHub Username and Token**: To execute the collection process using the GitHub API, you need to add at least one token to the file tokens.txt (See data collection part below).
 
 ## How to setup the artifact?
+You can setup the artifact following one of the three ways below:
 
-### Docker image from DockerHub:
+### Way 1: Docker image from DockerHub:
 One of the most straightforward methods to utilize our artifact is by pulling our Docker image from DockerHub. Follow these steps:
 
 ```bash
@@ -64,7 +65,7 @@ Finally, attach the container to a new window by clicking the '+' sign to the ri
 
 For detailed steps, please refer to this video tutorial: https://www.youtube.com/watch?v=8gUtN5j4QnY&t
 
-### Get our ZenoDo image
+### Way 2: Get our ZenoDo image
 1. Download our shared Zip from: https://doi.org/10.5281/zenodo.8344575
 
 2. After unziping the file load our Docker image using the command:
@@ -75,9 +76,11 @@ For detailed steps, please refer to this video tutorial: https://www.youtube.com
 
 Alternatively, you can choose to skip using the Docker container and utilize our shared Python virtual environment. Open the current folder (where this README file is located) in a VSCode window. Then, select our shared Python environment as the kernel for running the notebooks.
 
-### Manually prepare the environement
+### Way 3: Manually prepare the environement
 
-If you prefer manual setup, follow these steps. Ensure you have Python 3.8 or higher installed. In your terminal, in the same folder as this README file, execute the following commands:
+If you prefer manual setup, follow these steps. 
+
+1. Ensure you have Python 3.8 or higher installed. In your terminal, in the same folder as this README file, execute the following commands:
 
 ```bash
 # create a python environement, preferably use Python3.8 or higher
@@ -93,6 +96,9 @@ pip install jupyterlab
 # launch jupyterlab
 jupyter-lab
 ```
+
+2. Following that, download our dataset release from: https://github.com/sola-st/github-workflow-resource-optimization/releases/tag/v1.0.0
+3. Unzip the dataset in the same folder as this README file.
 
 ## Running the Artifact
 
