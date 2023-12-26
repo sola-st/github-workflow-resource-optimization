@@ -2,7 +2,7 @@
 
 
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8344576.svg)](https://doi.org/10.5281/zenodo.8344576) [<img src="https://img.shields.io/badge/dockerhub-GH_workflows_study-blue.svg?logo=Docker">](https://hub.docker.com/r/islemdockerdev/github-workflow-resource-study)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8344576.svg)](https://doi.org/10.5281/zenodo.8344575) [<img src="https://img.shields.io/badge/dockerhub-GH_workflows_study-blue.svg?logo=Docker">](https://hub.docker.com/r/islemdockerdev/github-workflow-resource-study)
 
 This artifact submission includes the code and data utilized in the empirical study outlined in the paper Resource Usage and Optimization Opportunities in Workflows of GitHub Actions. The study produces two primary outputs:
 
@@ -61,7 +61,7 @@ After starting the container, open VSCode and navigate to the containers icon on
 
 Under the Dev Containers tab, locate the name of the container you just started (e.g., github-study).
 
-Finally, attach the container to a new window by clicking the '+' sign to the right of the container.
+Finally, attach the container to a new window by clicking the '+' sign to the right of the container. Navigate to **workdir** folder in vscode window (All the files of the artifact are located there).
 
 For detailed steps, please refer to this video tutorial: https://www.youtube.com/watch?v=8gUtN5j4QnY&t
 
@@ -71,11 +71,12 @@ For detailed steps, please refer to this video tutorial: https://www.youtube.com
 2. After unziping the file load our Docker image using the command:
     ```bash
     # load the container
-    docker image load -i ./github_study.tar
+    docker image load -i ./github_study_container.tar
     # run and attach (careful with the name)
     docker container start --attach -i IMAGE-NAME 
     ```
 3. Attach the docker container to a vscode window as demonstrated in here: https://www.youtube.com/watch?v=8gUtN5j4QnY&t
+4. Navigate to the folder **workdir** in vscode window (All the files of the artifact are located there).
 
 ### Way 3: Manually prepare the environement
 
