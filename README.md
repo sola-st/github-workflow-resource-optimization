@@ -73,7 +73,7 @@ For detailed steps, please refer to this video tutorial: https://www.youtube.com
     # load the container
     docker image load -i ./github_study_container.tar
     # run and attach (careful with the name)
-    docker container start --attach -i IMAGE-NAME 
+    docker run -it islemdockerdev/github-workflow-resource-study:v1.0 
     ```
 3. Attach the docker container to a vscode window as demonstrated in here: https://www.youtube.com/watch?v=8gUtN5j4QnY&t
 4. Navigate to the folder **workdir** in vscode window (All the files of the artifact are located there).
