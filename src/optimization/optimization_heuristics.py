@@ -1,6 +1,7 @@
 import time
 import datetime
 from runs_analysis.name_based_analysis import simplify_and_map
+from runs_analysis.resource_usage import calculate_costs
 """def get_wasted_schedule_1(all_runs, all_jobs, thresh):
     scheduled_runs_copy = all_runs[all_runs.event == "schedule"].copy()
     repos_list = scheduled_runs_copy.repo_id.unique().tolist()
@@ -81,7 +82,7 @@ def get_wasted_schedule_1(all_runs, all_jobs, thresh):
         round(total_waste_time/total_time, 4),  \
         round(impacted_runs/all_runs[all_runs.event=="schedule"].shape[0], 4), \
         round(impacted_runs/all_runs.shape[0], 4), opt_repos 
-
+ 
 def is_commit_inbetween(ts, previous_ts, repo_name, commits):
     if repo_name in commits:
         for cm_ts in commits[repo_name]:
@@ -89,7 +90,7 @@ def is_commit_inbetween(ts, previous_ts, repo_name, commits):
                 return True
         return False
     else:
-        return False 
+        return False
 
 """def get_wasted_schedule_2(all_runs, all_jobs, all_repos, commits):
     scheduled_runs_copy = all_runs[all_runs.event == "schedule"].copy()
@@ -139,7 +140,7 @@ def get_wasted_schedule_2(all_runs, all_jobs, all_repos, commits):
                         if not is_interrupted:
                             wasted_fails.append(row["id"])
                     is_previous_failed = True
-                    previous_runs_ts = run_ts
+                    previous_run_ts = run_ts
                 else:
                     is_previous_failed = False
     total_waste_time = all_jobs[all_jobs.run_id.isin(wasted_fails)].up_time.sum()
@@ -387,3 +388,29 @@ def deactivate_inactive_schedule(data_set, commits_dict):
                 runs_to_save.extend(workflow_runs[workflow_runs.start_ts.isin(to_optimize)].id.to_list())
 
     return runs_to_save
+
+def compute_wasted_schedule1(all_runs, all_jobs, repos_list):
+    all_runs_sub = all_runs[all_runs.repo_id.isin(repos_list)]
+    total_waste, waste_over_total_schedule, total_over_total, impacted_runs_schedule, impacted_runs_all, opt_repos = get_wasted_schedule_1(all_runs_sub, all_jobs, 3)
+    all_runs["start_ts"] = all_runs.created_at.apply(lambda x: int(time.mktime(datetime.datetime.strptime(x, "%Y-%m-%dT%H:%M:%SZ").timetuple())))
+    sub_runs = all_runs[all_runs.repo_id.isin(opt_repos)]
+    min_max_start_ts = sub_runs.groupby("repo_id").start_ts.agg(["min", "max"]).reset_index()
+    total_start_ts = 0
+    for i, row in min_max_start_ts.iterrows():
+        total_start_ts += row["max"] - row["min"]
+    years = total_start_ts/(12*30*24*3600)
+    saved_cost = calculate_costs(total_waste / 60 / years)
+    return impacted_runs_all, impacted_runs_schedule, total_over_total, waste_over_total_schedule, saved_cost
+
+
+def compute_wasted_schedule2(all_runs, all_jobs, all_repos, commits_dict, repos_list):
+    all_runs_sub = all_runs[all_runs.repo_id.isin(repos_list)]
+    total_waste_time, total_over_schedule, total_over_total, wasted_fails = get_wasted_schedule_2(all_runs_sub, all_jobs, all_repos, commits_dict)
+    sub_runs = all_runs[all_runs.id.isin(wasted_fails)]
+    min_max_start_ts = sub_runs.groupby("repo_id").start_ts.agg(["min", "max"]).reset_index()
+    total_start_ts = 0
+    for i, row in min_max_start_ts.iterrows():
+        total_start_ts += row["max"] - row["min"]
+    years = total_start_ts/(12*30*24*3600)
+    saved_cost = calculate_costs(total_waste_time / 60 / years)
+    return all_runs_sub, total_waste_time, total_over_schedule, total_over_total, wasted_fails, saved_cost

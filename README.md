@@ -27,14 +27,14 @@ The following sections outline the requirements for importing, installing, and u
 3. **Working with VScode**: Capability to install and launch VScode. Detailed instructions will be provided.
 
 ### Hardware Requirements
-1. **Disk Space**: A minimum of XXGB disk space is required for our collected data, external data files, and our portable Python environment.
+1. **Disk Space**: A minimum of 8GB disk space is required for our collected data, external data files, and our portable Python environment.
 	
 2. **RAM free space**: Some data preprocessing requires substantial RAM space. In our experiments, usage can extend up to 9GB of RAM for a single analysis notebook (on top of the overhead of other software such as VScode, Docker or JupyerLab when needed).
 
 3. **CPU cores**: None of our scripts use multiprocessing. However, for reference, we conducted our experiments on a machine with 48 CPU cores. The time taken by our machine is specified within each code notebook.
 
 ### Software Requirements
-1. **Operating System**: Our scripts are designed to run on a Linux machine (Ubuntu 20.04). For optimal compatibility, it is recommended to rerun them on an Ubuntu machine with a version close to 20.04.
+1. **Operating System and Docker**: Our scripts are designed to run on a Linux machine (Ubuntu 20.04). For optimal compatibility, it is recommended to rerun them on an Ubuntu machine with a version close to 20.04. We also recommend the usage of Docker v20.x and higher.
 
 2. **Python Version**: The implementation and used packages are compatible with Python3.8 (recommended) and above.
 
@@ -70,11 +70,12 @@ For detailed steps, please refer to this video tutorial: https://www.youtube.com
 
 2. After unziping the file load our Docker image using the command:
     ```bash
-    # command to load the docker image
+    # load the container
+    docker image load -i ./github_study.tar
+    # run and attach (careful with the name)
+    docker container start --attach -i IMAGE-NAME 
     ```
 3. Attach the docker container to a vscode window as demonstrated in here: https://www.youtube.com/watch?v=8gUtN5j4QnY&t
-
-Alternatively, you can choose to skip using the Docker container and utilize our shared Python virtual environment. Open the current folder (where this README file is located) in a VSCode window. Then, select our shared Python environment as the kernel for running the notebooks.
 
 ### Way 3: Manually prepare the environement
 

@@ -246,7 +246,7 @@ def calc_costs_by_event(time, event):
     return round(time, 1) * get_os_factor() * get_minute_cost()
 
 def calculate_costs(time):
-    return round(time * get_os_factor() * get_minute_cost())
+    return round(time * get_os_factor() * get_minute_cost(), 2)
 
 def get_avg_runtime_rest(data_set, repos_list, event_list):
     all_runs = data_set.get_all_runs()
