@@ -108,11 +108,12 @@ jupyter-lab
 In this part, we present the necessary resources and instructions to replicate our data collection process (or collect more data).
 
 #### Collection resources
-* [repositories.csv](./repositories.csv): This is the list of popular repositories taken from [X], from which we randomly sampled XX repositories to use them in our study.
+* [repositories.csv](./repositories.csv): This is the list of popular repositories ([reference to this work](https://decan.lexpage.net/files/ICSME-2022.pdf)) from which we randomly sampled 600 repositories to use them in our study.
 
-* [repositories-2021-03-08.zip](./repositories-2021-03-08.csv): The list containing unpopular repositories taken from [XX] from which we randomly sampled XX to collect workflows data. We ended up with XX repositories having such data.
+* [repositories-2021-03-08.zip](./repositories-2021-03-08.csv): The list containing unpopular repositories ([reference to this work](https://arxiv.org/abs/2103.04682)) from which we randomly sampled 74K candidates to collect workflows data. We ended up with 352 repositories having such data.
 
 * [Collection notebook](./collect.ipynb): This is the code (in notebook format) used to collect our data using the two repositories lists as input.
+
 
 #### How to run?
 To run the collection code:
