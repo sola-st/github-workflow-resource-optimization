@@ -240,10 +240,17 @@ def get_comparative_resource_usage_summary(data_set, list_1, list_2):
 
 def calc_costs_by_event(time, event):
     events_factor = {
-
+        "pull_request": 1.44,
+        "push": 1.44,
+        "schedule": 1.52,
+        "pull_request_target":1.22,
+        "workflow_dispatch": 1.52,
+        "workflow_run": 1,
+        "release": 1,
+        "Others": 1.3
     }
     # TODO(UPDATE BASED ON EVENT OS FACTOR)
-    return round(time, 1) * get_os_factor() * get_minute_cost()
+    return round(time, 1) * events_factor[event] * get_minute_cost()
 
 def calculate_costs(time):
     return round(time * get_os_factor() * get_minute_cost(), 2)
