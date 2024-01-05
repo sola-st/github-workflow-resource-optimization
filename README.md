@@ -47,23 +47,23 @@ You can setup the artifact following one of the three options below:
 
 ### Option 1: Docker image from DockerHub:
 The perhaps most straightforward way to utilize our artifact is by pulling our Docker image from DockerHub. Follow these steps:
+1. Execute the following commands in your terminal to retrieve and start our docker image
+    ```bash
+    # Pull image
+    docker pull islemdockerdev/github-workflow-resource-study:v1.0
+    # Run the image inside a container
+    docker run -itd --name github-study islemdockerdev/github-workflow-resource-study:v1.0
+    # Start the container
+    docker start -i github-study
+    ```
 
-```bash
-# Pull image
-docker pull islemdockerdev/github-workflow-resource-study:v1.0
-# Run the image inside a container
-docker run -itd --name github-study islemdockerdev/github-workflow-resource-study:v1.0
-# Start the container
-docker start -i github-study
-```
+2. After starting the container, open VSCode and navigate to the containers icon on the left panel (Ensure that you have the Remote Explorer extension installed on your VScode).
 
-After starting the container, open VSCode and navigate to the containers icon on the left panel (Ensure that you have the remote containers extension installed).
+3. Under the Dev Containers tab, locate the name of the container you just started (e.g., github-study).
 
-Under the Dev Containers tab, locate the name of the container you just started (e.g., github-study).
+4. Finally, attach the container **github-study** to a new window by clicking the '+' sign located on the right of the container's name. Navigate to **workdir** folder in vscode window (all the files of the artifact are located there).
 
-Finally, attach the container to a new window by clicking the '+' sign to the right of the container. Navigate to **workdir** folder in vscode window (all the files of the artifact are located there).
-
-For detailed steps, please refer to this video tutorial: https://www.youtube.com/watch?v=8gUtN5j4QnY&t
+**Tutorial reference:** For detailed steps on how to attach a docker container in VScode, please refer to this short video tutorial (1min 38 sec): https://www.youtube.com/watch?v=8gUtN5j4QnY&t
 
 ### Option 2: Get our Zenodo image
 1. Download our shared Zip from: https://doi.org/10.5281/zenodo.8344575
@@ -129,7 +129,7 @@ Here is an example of how the tokens.json file should look like:
 3. Run the cells of the notebook one after another.
 
 #### Resulting Data
-Applying the above collection process we obtained the following data files (In case you are viewing this insdie the GitHub repository, you can find all the files inside this relase [LINK TO RELEASE](https://github.com/sola-st/github-workflow-resource-optimization/releases/tag/v1.0.0)):
+Applying the above collection process we obtained the following data files (In case you are viewing this on GitHub, the links below wouldn't work but you can find all the files within [this relase](https://github.com/sola-st/github-workflow-resource-optimization/releases/tag/v1.0.0)):
 * [all_runs.csv](./all_runs.csv)
 * [all_job.csv](./all_job.csv)
 * [all_steps.csv](./all_steps.csv)
