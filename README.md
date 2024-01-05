@@ -143,14 +143,20 @@ Applying the above collection process we obtained the following data files (In c
 #### 1. Reproducing Results of RQ1
 This notebook contains the reproduction of the results of RQ1, mainly summarized in Tables 1, 2 and 3 of the PDF.
 
+After Opening the notebook in VScode, click on RunAll as shown [here](https://code.visualstudio.com/docs/datascience/jupyter-notebooks)
+
 *Important: It takes around 4 minutes to run this notebook on our machine and consumes around 9GB of RAM*
 
 #### 2. Reproducing Results of RQ2
 This notebook contains the reproduction of the results of RQ2, mainly summarized in Table 4 of the PDF.
 
+After Opening the notebook in VScode, click on RunAll as shown [here](https://code.visualstudio.com/docs/datascience/jupyter-notebooks)
+
 *Important: It takes around 13 minutes to run this notebook on our machine and consumes around 9GB of RAM*
 
 #### 3. Reproducing Results of RQ3
 This notebook contains the reproduction of the results of RQ1, mainly summarized in Tables 5 and 6 of the PDF.
+
+After Opening the notebook in VScode, click on RunAll as shown [here](https://code.visualstudio.com/docs/datascience/jupyter-notebooks)
 
 *Important: It takes around 17 minutes to run this notebook on our machine and consumes around 9GB of RAM*
