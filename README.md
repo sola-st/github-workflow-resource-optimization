@@ -93,6 +93,9 @@ source .venv/bin/activate
 pip install -r requirements.txt
 # install the current folder as a Python package
 pip install .
+# create necessary folders
+mkdir tables
+mkdir repositories_runs
 # install jupyterlab
 pip install jupyterlab
 # launch jupyterlab

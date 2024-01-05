@@ -513,7 +513,7 @@ def calc_skip_impact(data_set, repos_list, commits_dict):
     runs_total_time = all_jobs.groupby("run_id").agg({"up_time": "sum"}).reset_index()
     all_runs = all_runs.merge(runs_total_time, left_on="id", right_on="run_id")
     runs_repos = all_runs.merge(all_repos[["id", "full_name"]], left_on="repo_id", right_on="id")
-    
+    updated_repos_list = runs_repos[(runs_repos.full_name.isin(list(commits_dict.keys())))]
     skipped_prop = []
     skipped_repos = []
     for repo in commits_dict:
@@ -526,7 +526,7 @@ def calc_skip_impact(data_set, repos_list, commits_dict):
             if repo in runs_repos.full_name.unique():
                 skipped_repos.append(repo)
     
-    impacted_repos_prop = len(skipped_repos)/len(repos_list)
+    impacted_repos_prop = len(skipped_repos)/len(repos_list) * 901 / 952 # number of repos for which messages where retrieved without errors
     impacted_runs_prop = sum(skipped_prop)/all_runs.shape[0]
     
     skipped_repos_runs = runs_repos[runs_repos.full_name.isin(skipped_repos)]
@@ -652,7 +652,7 @@ def calc_cache_impact(new_collected_commits, data_set, repos_list):
     added_optimization, runs_between = get_optimization_time_improvement_cache(new_collected_commits, 
                                                                            data_set, 
                                                                            repos_list)
-    average_time_impact = sum([x[2] for x in added_optimization])/len(added_optimization)
+    average_time_impact = float(str(sum([x[2] for x in added_optimization])/len(added_optimization))[:5])
     all_runs = data_set.get_all_runs()
     possible_runs = all_runs[all_runs.id.isin(runs_between)]
     possible_runs["start_ts"] = possible_runs.created_at.apply(lambda x: int(time.mktime(datetime.datetime.strptime(x, "%Y-%m-%dT%H:%M:%SZ").timetuple())))

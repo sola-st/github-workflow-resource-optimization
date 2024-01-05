@@ -239,4 +239,4 @@ if __name__ == "main":
     next_token = 1
     for repo in list_repos[25:]:
         logging.info("constructing tables for repository: {}".format(repo))
-        contruct_repo_tables(repo)
+        construct_repo_tables(repo)

@@ -75,8 +75,8 @@ def get_wasted_schedule_1(all_runs, all_jobs, thresh):
     for run in opt_runs:
         impacted_runs += len(run[thresh:])
 
-    print(total_time)
-    print(total_schedule_time/total_time)
+    #print(total_time)
+    #print(total_schedule_time/total_time)
     return total_waste_time, \
         round(total_waste_time/total_schedule_time,4), \
         round(total_waste_time/total_time, 4),  \
