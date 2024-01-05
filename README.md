@@ -165,6 +165,7 @@ After Opening the notebook in VScode, click on RunAll as shown [here](https://co
 *Important: It takes around 17 minutes to run this notebook on our machine and consumes around 9GB of RAM*
 
 ## Cite us
+```bibtex
 @dataset{bouzenia_islem_2024_10460584,
   author       = {BOUZENIA Islem and
                   Pradel Michael},
@@ -176,3 +177,4 @@ After Opening the notebook in VScode, click on RunAll as shown [here](https://co
   doi          = {10.5281/zenodo.10460584},
   url          = {https://doi.org/10.5281/zenodo.10460584}
 }
+```
