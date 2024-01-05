@@ -50,9 +50,9 @@ The perhaps most straightforward way to utilize our artifact is by pulling our D
 1. Execute the following commands in your terminal to retrieve and start our docker image
     ```bash
     # Pull image
-    docker pull islemdockerdev/github-workflow-resource-study:v1.0
+    docker pull islemdockerdev/github-workflow-resource-study:v1.1
     # Run the image inside a container
-    docker run -itd --name github-study islemdockerdev/github-workflow-resource-study:v1.0
+    docker run -itd --name github-study islemdockerdev/github-workflow-resource-study:v1.1
     # Start the container
     docker start -i github-study
     ```
