@@ -73,7 +73,7 @@ The perhaps most straightforward way to utilize our artifact is by pulling our D
     # load the container
     docker image load -i ./github_study_container.tar
     # run and attach (careful with the name)
-    docker run -it islemdockerdev/github-workflow-resource-study:v1.0 
+    docker run -it islemdockerdev/github-workflow-resource-study:v1.1
     ```
 3. Attach the docker container to a vscode window as demonstrated in here: https://www.youtube.com/watch?v=8gUtN5j4QnY&t
 4. Navigate to the folder **workdir** in vscode window (all the files of the artifact are located there).
