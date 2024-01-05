@@ -174,7 +174,7 @@ After Opening the notebook in VScode, click on RunAll as shown [here](https://co
   month        = jan,
   year         = 2024,
   publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.10460584},
-  url          = {https://doi.org/10.5281/zenodo.10460584}
+  doi          = {10.5281/zenodo.8344575},
+  url          = {https://doi.org/10.5281/zenodo.8344575}
 }
 ```
