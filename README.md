@@ -163,3 +163,16 @@ This notebook contains the reproduction of the results of RQ1, mainly summarized
 After Opening the notebook in VScode, click on RunAll as shown [here](https://code.visualstudio.com/docs/datascience/jupyter-notebooks)
 
 *Important: It takes around 17 minutes to run this notebook on our machine and consumes around 9GB of RAM*
+
+## Cite us
+@dataset{bouzenia_islem_2024_10460584,
+  author       = {BOUZENIA Islem and
+                  Pradel Michael},
+  title        = {{Resource Usage and Optimization Opportunities in 
+                   Workflows of GitHub Actions - Artifact}},
+  month        = jan,
+  year         = 2024,
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.10460584},
+  url          = {https://doi.org/10.5281/zenodo.10460584}
+}
